@@ -13,11 +13,11 @@ router.get("/", (req, res) => {
     },
   })
     .then((dbCatData) => {
-      if (!categoryDb) {
+      if (!dbCatData) {
         res.status(404).json({ message: "No categories found" });
         return;
       }
-      res.json(categoryDb);
+      res.json(dbCatData);
     })
     .catch((err) => {
       console.log(err);
